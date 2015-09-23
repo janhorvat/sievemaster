@@ -1,0 +1,141 @@
+<html ng-app>
+<head>
+	
+	<!-- 
+	Author: Jan Horvat (jan.horvat@gmail.com)
+	Version: 0.2 (July 2014)
+	-->
+	 
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+
+	<link rel="stylesheet" href="css/app.css">
+	<link href="css/fonts/font-awesome.min.css" rel="stylesheet">
+	<title>Sieve Master</title>
+	<style>
+
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	
+	
+
+	<div id="consoleWrapper">
+		<table>
+			<tr>
+				<td class="left"><img id="logo" src="res/icon.png" width="30"/></td>
+				<td><span id="appTitle">Sieve Master</span></td>
+				<td class="right">
+					<div class="consoleButton" id="buttonMenu"><i class="fa fa-ellipsis-v"></i></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="grid" class="inactive"><div id="notification"></div></div>
+
+	<div id="scoresWrapper">
+		<div id="squaresBar">
+			<div style="float: left;" class="consoleSmallSquare">		
+				Scores<br><div id="scoreCount">0</div>	
+			</div>
+			<div style="float: center;" class="consoleSmallSquare">
+				Best<br><div id="bestScores">0</div>	
+			</div>
+			<div style="float: right;" class="consoleSmallSquare">
+				Level<br><div id="level">1</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="menu">
+		<div class="popupInside">
+			<div class="menuButton" id="buttonRestart" style="margin-top: 30px;">Restart</div><br>
+			<div class="menuButton" id="buttonHelp">How to play</div><br>
+			<div class="menuButton" id="buttonSound">Sounds ON</div><br>
+			<div class="menuButton" id="buttonMusic">Music OFF</div><br>
+			<div class="menuButton" id="buttonShare">Share</div><br>
+			<div class="menuButton" id="buttonCloseMenu">Close menu</div>
+			<div class="footerWrapper">
+				<div class="footerInside">
+					<a href="#" onclick="window.open('https://www.linkedin.com/pub/jan-horvat/47/291/590', '_system', 'location=yes');">Jan Horvat</a> · 
+					<a href="#" onclick="window.open('https://www.linkedin.com/profile/view?id=178273059', '_system', 'location=yes');">Matic Verbančič</a> · 
+					<a href="#" onclick="window.open('https://www.facebook.com/jan.zmitek?fref=ts', '_system', 'location=yes');">Jan Žmitek (music)</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="restartConfirmation">
+		<div class="restartQuestion">Restart the game?</div>
+		<div style="clear:both;"></div>
+		<span class="restartYes close">Yep</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="close">No</span>
+		<div style="clear:both;"></div><br><br>
+		<span class="buttonRate close"><img src="svg/star.svg" width="30" height="30"/> Rate on <span class="platform"></span> <img src="svg/star.svg" width="30" height="30"/></span>
+	</div>
+	
+	<div id="exitConfirmation">
+		<div class="restartQuestion">Exit app?</div>
+		<div style="clear:both;"></div>
+		<span class="exitYes close">Yep</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="close">No</span>
+		<div style="clear:both;"></div><br><br>
+		<span class="buttonRate close"><img src="svg/star.svg" width="30" height="30"/> Rate on <span class="platform"></span> <img src="svg/star.svg" width="30" height="30"/></span>
+	</div>
+
+	<div id="tutorial1">
+		<div class="popupInside" id="proceed1">
+			<p>Swipe your grid in all four directions in order to put golden or silver coin into the hole to proceed to the next level. Golden coin is worth more and it will clear your grid a little bit!</p>
+			<img class="tutorialImage" src="tutorial/tutorial.png" />
+			<div style="clear:both;"></div>
+			<div class="buttonWrapper">
+				<span id="next1">Next</span>
+			</div>
+		</div>
+	</div>	
+	<div id="tutorial2">
+		<div class="popupInside" id="proceed2">
+			<p>If at least 3 blocks are adjacent, you can clear them by tapping on them.</p>
+			<img class="tutorialImage" src="tutorial/tutorial.png" />
+			<div style="clear:both;"></div>
+			<div class="buttonWrapper">
+				<span id="next2">Next</span>
+			</div>
+		</div>
+	</div>	
+	<div id="tutorial3">
+		<div class="popupInside" id="proceed3">
+			<p>Use bombs to clear multiple blocks. Color bombs clears blocks of certain colour, while black bomb clears blocks around it.</p>
+			<img class="tutorialImage" src="tutorial/tutorial.png" />
+			<div style="clear:both;"></div>
+			<div class="buttonWrapper">
+				<span class="close">Got it!</span>
+			</div>
+		</div>
+	</div>	
+
+	<!--<div id="ads"></div>-->
+
+</div>
+
+   
+<script type='text/javascript' src="phonegap.js"></script>
+<script type='text/javascript' src="lib/jquery/jquery.1.11.1.min.js"></script>
+<script type='text/javascript' src="lib/jquery.mobile/jquery.mobile.custom.min.js"></script>
+<script type='text/javascript' src="lib/fastclick/fastclick.js"></script>
+<script type='text/javascript' src="lib/jquery.touchSwipe/jquery.touchSwipe.min.js"></script>
+<script type='text/javascript' src="lib/jquery.transit/jquery.transit.min.js"></script>
+<script type='text/javascript' src="js/index.js"></script>	   
+<script type='text/javascript' src="js/sounds.js"></script>	   
+<script type='text/javascript' src="js/clears.js"></script>	   
+<script type='text/javascript' src="js/movements.js"></script>	   
+<script type='text/javascript' src="js/placements.js"></script>	   
+<script type='text/javascript' src="js/levels.js"></script>	   
+<script type='text/javascript' src="js/app.js"></script>	   
+<script type="text/javascript"> window.deviceReady = 0; initialize(); </script>
+
+</body>
+</html>

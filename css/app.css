@@ -1,0 +1,315 @@
+@font-face {
+	font-family: OpenSansCondensed;
+    src: url(fonts/OpenSans-CondLight.ttf);
+}
+
+@font-face {
+	font-family: OpenSansCondensed;
+    src: url(fonts/OpenSans-CondBold.ttf);
+    font-weight: bold;
+}
+
+body {
+	font-family: 'OpenSansCondensed', sans-serif;
+	margin: 0px;
+	background-color: #fffeee;
+	color: #363636;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+}
+
+.wrapper, .ui-mobile .ui-page {
+	background-color: #fffeee;	
+	background-image: url('bg.png');
+}
+
+#consoleWrapper {
+	font-size: 24px;
+	margin: 0px auto;
+	margin-bottom: 0px;
+	text-align: center;
+	padding: 5px 10px;
+	background-color: #A23E2F;
+	box-shadow: 0px 0px 5px 0px #6d5b45;
+}
+
+#appTitle {
+	font-weight: bold;
+		color: #fffeee;
+}
+
+table { 
+	width: 100%; 
+}
+
+td { 
+	float: left; 
+}
+
+td.right { 
+	float: right; 
+	color: #fffeee;
+}​
+
+.notLast {
+	margin-right: 3%;
+}
+
+#scoresWrapper {
+	background-color: #A23E2F;
+	margin: 0 auto; 
+	position: absolute; 
+	box-shadow: 0px 0px 5px 0px #6d5b45;
+	bottom: 0px; 
+	left: 0px; 
+	width: 100%;
+}
+
+#squaresBar {
+	padding: 10px;
+	text-align: center;
+}
+
+.consoleSmallSquare {
+	display: inline-block;
+	width: 28%;
+	padding: 0px 5px;
+	background-color: #fffeee;
+}
+
+#scoreCount, #bestScores, #level {
+	font-weight: bold;
+}
+
+#restartConfirmation, #exitConfirmation {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background-image: url('bg.png');
+	display: none;
+	opacity: 0.9;
+	top: 0px;
+	z-index: 6;
+}
+
+.restartQuestion {
+	margin-top: 20%;
+	margin-bottom: 30px;
+}
+
+#tutorial1, #tutorial2, #tutorial3, #menu {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background-image: url('bg.png');
+	display: none;
+	opacity: 1;
+	top: 0px;
+	z-index: 6;
+	float: center;
+}
+
+.popupInside {
+	margin: 15px;
+}
+
+.close, #next1, #next2 {
+	font-weight: bold;
+	border: 2px solid #363636;
+	padding: 10px;
+	background-color: #A23E2F;
+	color: #fffeee;
+	cursor: pointer;
+}
+
+.buttonWrapper {
+	margin: 0 auto; 
+	position: absolute; 
+	bottom: 30px; 
+	left: 0px; 
+	width: 100%;
+}
+
+.tutorialImage {
+	opacity: 10;
+}
+
+.menuButton {
+	font-weight: bold;
+	border: 2px solid #363636;
+	background-color: #A23E2F;
+	color: #fffeee;
+	cursor: pointer;
+	width: 70%;
+	margin: 0px auto;
+}
+
+#notification {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	font-weight: bold;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	color: #fffeee;
+	right: 5px;
+	z-index: 5;
+	display: none;
+}
+
+#grid {
+	width: 500px;
+	height: 500px;
+	background-color: #fffeee;
+	margin: 0px auto;
+	display: none;
+}
+
+.block {
+	position:absolute;
+	width:50px;
+	height: 50px;
+	z-index: 1;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
+.nugget {
+	z-index: 3;
+}
+
+.hole {
+	position:absolute;
+	width:50px;
+	height: 50px;
+	/*box-shadow: inset 5px 5px 5px 5px #6d5b45;*/
+	background-image: url('bg.png');
+	-moz-border-radius: 360px;
+	border-radius: 360px;
+	z-index: 2;
+	opacity: 0.7;
+}
+		
+.bomb {
+	z-index: 3;
+}
+
+@-moz-keyframes appear {
+	0% {
+		transform: scale(0);    
+		opacity: 0.75;
+	}
+	50% {
+		transform: scale(1.2);    
+		opacity: 1.0;
+	}
+	100% { 
+		transform: scale(1);    
+		opacity: 1.0;
+	}
+}
+
+@-webkit-keyframes appear {
+  from {
+	-webkit-transform: scale(0);
+	opacity: 0.75;
+  }
+  50% {
+	-webkit-transform: scale(1.2);
+	opacity: 1.0;
+  }
+  to { 
+	-webkit-transform: scale(1);
+	opacity: 1.0;
+  }
+}
+
+.appear { 
+	animation-name: appear; 
+	animation-duration: 0.2s; 
+	animation-iteration-count: 1;
+	-webkit-animation-name: appear; 
+	-webkit-animation-duration: 0.2s; 
+	-webkit-animation-iteration-count: 1; 
+}
+	
+@-moz-keyframes destroy {
+	0% {
+		transform: scale(1.0);    
+		opacity: 0.75;
+	}
+	50% {
+		transform: scale(1.3);    
+		opacity: 1.0;
+	}
+	100% { 
+		transform: scale(0);    
+		opacity: 0.75;
+	}
+}
+
+@-webkit-keyframes destroy {
+	from {
+		-webkit-transform: scale(1.0);
+		opacity: 0.75;
+	}
+	50% {
+		-webkit-transform: scale(1.3);
+		opacity: 1;
+	}
+	to { 
+		-webkit-transform: scale(0);
+		opacity: 0.75;
+	}
+}
+
+.destroy { 
+	animation-name: destroy; 
+	animation-duration: 0.5s; 
+	animation-iteration-count: 1;
+	-webkit-animation-name: destroy; 
+	-webkit-animation-duration: 0.3s; 
+	-webkit-animation-iteration-count: 1; 
+}
+
+.footerWrapper {
+	background-color: #A23E2F;
+	padding: 10px 0px;
+	box-shadow: 0px 0px 5px 0px #6d5b45;
+	margin: 0 auto; 
+	position: absolute; 
+	bottom: 0px; 
+	left: 0px; 
+	width: 100%;
+}
+
+.footerInside {
+	color: #fffeee;
+	margin: 0 auto;
+}
+
+.footerInside a {
+	color: #fffeee;
+	text-decoration: none;
+}
+
+/*#ads {
+	margin: 0 auto;
+	width: 100%;
+	left: 0px;
+	text-align:center;
+	text-align:-webkit-center;
+	position: absolute;
+	bottom: 0px;
+}*/
+
+.clear {
+	clear:both;
+}
+
+*:not(input):not(textarea) {
+	-webkit-user-select: none; /* disable selection/Copy of UIWebView */
+	-webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
+} 
