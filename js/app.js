@@ -29,7 +29,7 @@ function calculateGridSize() {
 	if (gridWidth > 600) {
 		gridWidth = 600;
 	}
-	
+
 	window.blockWidth = gridWidth / gridSize;
 
 	$('#restartConfirmation, #exitConfirmation, .close, #next1, #next2, .menuButton, #appTitle').css({fontSize: (blockWidth / 3 * 2) + 'px'});
@@ -41,17 +41,17 @@ function calculateGridSize() {
 	$('.menuButton').css({fontSize: (blockWidth / 3 * 2) + 'px', 'padding': (blockWidth / 10) + 'px'});
 	$('p').css({'min-height': (gridWidth / 5 * 2) + 'px'});
 
-	$('#logo').width(blockWidth); 
+	$('#logo').width(blockWidth);
 	$('#logo').height(blockWidth);
 
 	$('#menu').css({'opacity': '0.9'});
 	$('#grid').css({'width' : gridWidth, 'height' : gridWidth});
 	$('.tutorialImage').css({'width' : gridWidth / 3 * 2, 'height' : gridWidth / 3 * 2});
 	$('.block, .left').css({'width' : blockWidth, 'height' : blockWidth});
-	$('.wrapper').css({'height' : $('body').height() + 'px'});	
-	$('#grid').css({'display' : 'block'});	
-	//$('#adWrapper').css({'width' : gridWidth});	
-	
+	$('.wrapper').css({'height' : $('body').height() + 'px'});
+	$('#grid').css({'display' : 'block'});
+	//$('#adWrapper').css({'width' : gridWidth});
+
 	deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
 	if (deviceType == 'iPad' || deviceType == 'iPhone') {
 		$('.platform').html("App Store");
@@ -60,30 +60,30 @@ function calculateGridSize() {
 	}
 
 	$('#consoleWrapper').css({'margin-bottom': (($('body').height() - gridWidth - $('#consoleWrapper').height() - $('#scoresWrapper').height() - 10) / 2) + 'px'});
-	
+
 }
 
 function initialize() {
-	
+
 	$('.block, .hole').remove();
 	window.gridSize = 8;
 	calculateGridSize();
 
 	blocks = localStorage.getItem('blocks');
-	
+
 	window.playSounds = 1;
 	if (localStorage.getItem('soundsEnabled') == 0) {
 		window.playSounds = 0;
-		$('#buttonSound').html('Sounds OFF');	
+		$('#buttonSound').html('Sounds OFF');
 	}
-	
+
 	if (localStorage.getItem('musicEnabled') == 1) {
-		$('#buttonMusic').html('Music ON');	
+		$('#buttonMusic').html('Music ON');
 		setTimeout(function(){
 			playMusic();
 		}, 2000);
 	}
-	
+
 	if (blocks) {
 		$('#grid').append(localStorage.getItem('hole'));
 		blocks = JSON.parse(blocks);
@@ -94,7 +94,7 @@ function initialize() {
 			coordinates[1] = parseInt(coordinates[1]);
 			xPos = blockWidth * (coordinates[0] - 1);
 			yPos = blockWidth * (coordinates[1] - 1);
-			
+
 			if (value.class == 'block appear') {
 				$('#grid').append($('<div class="'+value.class+'" name="'+value.name+'" id="'+value.id+'"></div>').show());
 				$('#' + value.id).css({'width' : blockWidth, 'height' : blockWidth, 'margin-left' : xPos+'px', 'margin-top' : yPos+'px', 'border-radius': (blockWidth / 10 * 2) + 'px', 'background-color' : getColorCode(value.name, 0), 'border': (blockWidth / 10) + 'px solid ' + getColorCode(value.name, 1)});
@@ -103,7 +103,7 @@ function initialize() {
 				$('#' + value.id).css({'width' : blockWidth, 'height' : blockWidth, 'margin-left' : xPos+'px', 'margin-top' : yPos+'px'});
 			} else if (value.name == 'bomb-black' || value.name == 'bomb-red' || value.name == 'bomb-green' || value.name == 'bomb-yellow' || value.name == 'bomb-purple' || value.name == 'bomb-blue' || value.name == 'bomb-brown') {
 				$('#grid').append($('<div class="'+value.class+'" name="'+value.name+'" id="'+value.id+'"><img src="svg/'+value.name+'.svg" width="'+blockWidth+'" /></div>').show());
-				$('#' + value.id).css({'width' : blockWidth, 'height' : blockWidth, 'margin-left' : xPos+'px', 'margin-top' : yPos+'px'});		
+				$('#' + value.id).css({'width' : blockWidth, 'height' : blockWidth, 'margin-left' : xPos+'px', 'margin-top' : yPos+'px'});
 			}
 		});
 
@@ -113,8 +113,8 @@ function initialize() {
 		window.level = settings['level'];
 		window.initialSetup = 0;
 		window.placeNewBlocks = 1;
-		$('#level').html(level);	
-		$('#scoreCount').html(scores);	
+		$('#level').html(level);
+		$('#scoreCount').html(scores);
 		handleBestScores();
 	} else {
 		if (localStorage.getItem('initialHelpDisplay') == null) {
@@ -123,8 +123,8 @@ function initialize() {
 		}
 		window.scores = 0;
 		window.level = 1;
-		$('#level').html(level);	
-		$('#scoreCount').html(scores);	
+		$('#level').html(level);
+		$('#scoreCount').html(scores);
 		settings = levelSettings();
 		window.placeNewBlocks = 1;
 		window.initialSetup = 1;
