@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.comoj.sievemaster"
-        version   = "1.01">
+        version   = "1.02">
 
     <name>Sieve Master</name>
 
@@ -15,7 +15,7 @@
     </author>
 
   <preference name="phonegap-version" value="3.3.0" />
-
+  <preference name="android-minSdkVersion" value="17" />
   <preference name="permissions" value="none"/>
 
   <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
