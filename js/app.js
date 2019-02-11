@@ -39,7 +39,7 @@ function calculateGridSize() {
 	$('.consoleButton').css({'padding-top': (blockWidth / 10 * 2) + 'px', 'padding-left': (blockWidth / 10 * 2) + 'px'});
 	$('#notification ').css({'font-size': blockWidth + 'px', 'margin-top': ((gridWidth - (blockWidth * 2)) / 2) + 'px'});
 	$('.menuButton').css({fontSize: (blockWidth / 3 * 2) + 'px', 'padding': (blockWidth / 10) + 'px'});
-	$('p').css({'min-height': (gridWidth / 5 * 2) + 'px'});
+	$('p').css({'min-height': (gridWidth / 6 * 2) + 'px'});
 
 	$('#logo').width(blockWidth);
 	$('#logo').height(blockWidth);
@@ -48,7 +48,7 @@ function calculateGridSize() {
 	$('#grid').css({'width' : gridWidth, 'height' : gridWidth});
 	$('.tutorialImage').css({'width' : gridWidth / 3 * 2, 'height' : gridWidth / 3 * 2});
 	$('.block, .left').css({'width' : blockWidth, 'height' : blockWidth});
-	$('.wrapper').css({'height' : $('body').height() + 'px'});
+	//$('.wrapper').css({'height' : $('body').height() + 'px'});
 	$('#grid').css({'display' : 'block'});
 	//$('#adWrapper').css({'width' : gridWidth});
 
@@ -59,8 +59,8 @@ function calculateGridSize() {
 		$('.platform').html("Google Play");
 	}
 
-	$('#consoleWrapper').css({'margin-bottom': (($('body').height() - gridWidth - $('#consoleWrapper').height() - $('#scoresWrapper').height() - 10) / 2) + 'px'});
-
+	$('#grid').css({'margin-bottom': '10px', 'margin-top': '10px'});
+	//$('#consoleWrapper').css({'margin-bottom': (($('body').height() - gridWidth - $('#consoleWrapper').height() - $('#scoresWrapper').height() - 10) / 2) + 'px'});
 }
 
 function initialize() {

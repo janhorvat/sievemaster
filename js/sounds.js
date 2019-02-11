@@ -17,7 +17,7 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/))
 	mus.addEventListener('ended', function() {
 		this.currentTime = 0;
 		this.play();
-	}, false);		
+	}, false);
 	mus.setAttribute('src', 'sounds/fleva.mp3');
 }
 
@@ -30,13 +30,13 @@ function playSound(type) {
 			var snd = new Media(path + "sounds/" + type + ".mp3", function() {
 			   this.release();
 			});
-			snd.play();	
+			snd.play();
 		} else {
 			audioElement = document.createElement('audio');
 			audioElement.setAttribute('src', 'sounds/'+type+'.mp3');
 			audioElement.setAttribute('autoplay', 'autoplay');
 			audioElement.play();
-		}	
+		}
 	}
 }
 
