@@ -41,7 +41,8 @@ body {
 
 #appTitle {
 	font-weight: bold;
-		color: #fffeee;
+	color: #fffeee;
+	margin-left: 10px;
 }
 
 table {
